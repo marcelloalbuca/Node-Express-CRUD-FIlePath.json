@@ -15,3 +15,6 @@ const getUsers = () => {
         }
 
     }
+
+const saveUser = (users) => fs.writeFileSync(filePath, JSON.stringify(users, null, '\t'));
+
