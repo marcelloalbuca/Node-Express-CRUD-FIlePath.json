@@ -31,6 +31,15 @@ const userRoute = (app) => {
 
         res.send({ users });
     })
+    .post((req, res) => {
+        const users = getUsers()
+
+            users.push(req.body)
+            saveUser(users)
+
+            res.status(201).send('OK')
+
+    })
     
 }
 
