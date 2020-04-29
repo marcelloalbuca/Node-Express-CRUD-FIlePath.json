@@ -18,3 +18,20 @@ const getUsers = () => {
 
 const saveUser = (users) => fs.writeFileSync(filePath, JSON.stringify(users, null, '\t'));
 
+const userRoute = (app) => {
+    //app.route('/users')
+    //:id? (id opicional)
+    app.route('/users/:id?')
+    .get((req, res) => {
+        const users = getUsers();
+
+        //const { email, nome } = req.body
+        //res.status(201)
+        //validaçoes
+
+        res.send({ users });
+    })
+    
+}
+
+
